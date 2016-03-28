@@ -2,10 +2,10 @@
 # Variables
 SEA=../data/sea.zip
 BOUNDS=../data/bounds.zip
-STYLE=../styles/kyr/map
-C_STYLE=../styles/kyr/contours
-TYPE=../types/kyr/map.typ
-C_TYPE=../types/kyr/contours.typ 
+STYLE=../styles/map
+C_STYLE=../styles/contours
+TYPE=../types/map.typ
+C_TYPE=../types/contours.typ 
 QMAPSHACK=../maps
 # Apps
 MKGMAP=../apps/mkgmap-r3671/mkgmap.jar
