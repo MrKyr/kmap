@@ -1,0 +1,59 @@
+﻿# -------------------------------------------------------------------
+# This is the default mkgmap style file for converting closed OSM ways
+# into Garmin polygons.
+# Any line prefaced with # is a comment and will not be applied.
+# Each line is a rule, of the generalised format:
+#  OSM_tag(s)_to_match  [Garmin_type_code resolution]
+# See http://wiki.openstreetmap.org/wiki/Mkgmap/help/style_rules
+# and http://wiki.openstreetmap.org/wiki/Mkgmap/help/Custom_styles
+# for more information.
+
+landuse=allotments [0x4e resolution 21]
+landuse=cemetery|landuse=cemetary|amenity=grave_yard [0x1a resolution 21]
+landuse=commercial [0x0c resolution 19]
+landuse=construction [0x0c resolution 21]
+landuse=farm [0x4e resolution 20]
+landuse=farmyard [0x4e resolution 22]
+landuse=forest|landuse=wood [0x50 resolution 20]
+landuse=greenfield [0x17 resolution 20]
+landuse=meadow [0x17 resolution 19]
+landuse=military [0x04 resolution 19]
+landuse=quarry [0x0c resolution 19]
+landuse=recreation_ground [0x19 resolution 19]
+# dedicate resolution 24 for building=* instead of related landuse=*
+landuse=industrial [0x0c resolution 23-19]
+landuse=residential [0x10 resolution 23-19]
+landuse=retail [0x08 resolution 23-20]
+landuse=village_green [0x17 resolution 20]
+landuse=vineyard [0x4e resolution 20]
+#landuse=industrial [0x0c resolution 23-19]
+landuse=residential [0x10 resolution 23-19]
+landuse=retail [0x08 resolution 23-20]
+landuse=village_green [0x17 resolution 20]
+landuse=vineyard [0x4e resolution 20]
+
+#natural=scrub [0x4f resolution 20]
+natural=wood [0x50 resolution 20]
+
+military=airfield [0x04 resolution 20]
+military=barracks [0x04 resolution 23]
+military=danger_area [0x04 resolution 20]
+military=range [0x04 resolution 20]
+
+(natural=water | waterway=riverbank) & area_size() >=500000 [0x3c resolution 14]
+(natural=water | waterway=riverbank) & area_size() >=200000 [0x3c resolution 16]
+(natural=water | waterway=riverbank) & area_size() >=50000 [0x3c resolution 18]
+(natural=water | waterway=riverbank) [0x3f resolution 19]
+#(natural=water) [0x3f resolution 19]
+natural=water [0x3f resolution 19]
+natural=waterfall | waterway=waterfall [0x47 resolution 21]
+natural=wood [0x50 resolution 18]
+
+# tags for land & background
+#natural=land [0x27 resolution 20]
+natural=background [0x27 resolution 14]
+natural=sea [0x32 resolution 14]
+
+<finalize>
+# The finalizer section is executed for each element when a rule with an element type matches
+include 'inc/compat_points';
