@@ -1,10 +1,3 @@
----
-Title: This is the title.
-Date: 2016-03-28
-Tags: tag1, tag2
-Published: true
----
-
 ## gmap.sh 1.0 (28 March 2016)
 (c) Kyriakos Bellios (kyr@designisdesign.eu)
 
