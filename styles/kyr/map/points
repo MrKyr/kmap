@@ -1,0 +1,181 @@
+# don't render not relevant mkgmap:line2poi tags
+amenity=* & mkgmap:line2poi=true {delete amenity}
+barrier=* & mkgmap:line2poi=true {delete barrier}
+barrier=* & mkgmap:area2poi=true {delete barrier}
+historic=* & mkgmap:line2poi=true {delete historic}
+landuse=* & mkgmap:line2poi=true {delete landuse}
+leisure=* & mkgmap:line2poi=true {delete leisure}
+man_made=* & mkgmap:line2poi=true {delete man_made}
+natural=* & mkgmap:line2poi=true {delete natural}
+rcn_ref=* & mkgmap:line2poi=true {delete rcn_ref}
+place=* & mkgmap:line2poi=true {delete place}
+shop=* & mkgmap:line2poi=true {delete shop}
+sport=* & mkgmap:line2poi=true {delete sport}
+tourism=* & mkgmap:line2poi=true {delete tourism}
+public_transport=platform & mkgmap:line2poi=true {delete public_transport}
+
+#aerialway=station [0x5300 level 3]
+#aeroway=airport [0x5900 level 4]
+#amenity=atm { name '${operator}: ${name}' | '${name}' | '${operator}' } [0x2f06 level 3]
+#amenity=bank { name '${name} (${operator})' | '${name}' | '${operator}' } [0x2f06 level 3]
+#amenity=atm [0x2f06 level 3]
+#amenity=cafe [0x2a0e level 3]
+#amenity=car_wash [0x2f0e level 3]
+#amenity=cinema [0x2d03 level 4]
+#amenity=college [0x2c05 level 3]
+#amenity=doctors [0x3002 level 4]
+#amenity=fast_food [0x2a07 level 3]
+#amenity=fire_station [0x3008 level 3]
+#amenity=fuel [0x2f01 level 4]
+#amenity=hospital [0x3002 level 4]
+#amenity=library [0x2c03 level 3]
+#amenity=pharmacy [0x2e05 level 4]
+#amenity=place_of_worship [0x2c0b level 3]
+#amenity=police [0x3001 level 3]
+#amenity=post_office [0x2f05 level 4]
+#amenity=pub [0x4600 level 4]
+#amenity=public_building [0x3000 level 3]
+#amenity=restaurant [0x2a00 level 4]
+#amenity=school [0x2c05 level 4]
+#amenity=supermarket [0x2e02 level 4]
+#amenity=telephone [0x5100 level 3]
+#amenity=theatre [0x2d01 level 3]
+#amenity=toilets [0x4e00 level 3]
+#amenity=place_of_worship [0x6404 level 3]
+#amenity=bus_station [0x2f08 level 3]
+amenity=biergarten [0x2d02 level 3]
+amenity=courthouse [0x3004 level 4]
+amenity=drinking_water [0x5000 level 3]
+amenity=emergency_phone [0x5100 level 3]
+amenity=grave_yard [0x6403 level 3]
+amenity=hunting_stand & shelter=yes [0x2b05 level 4]
+amenity=parking [0x2f0b level 3]
+amenity=shelter [0x2b05 level 3]
+amenity=townhall [0x3003 level 3]
+amenity=university [0x2c05 level 3]
+amenity=zoo [0x2c07 level 3]
+
+#barrier=bollard {add access = no; add bicycle = yes; add foot = yes} [0x660f resolution 20]
+barrier=cycle_barrier {add access = no; add bicycle = yes; add foot = yes} [0x660f resolution 20]
+
+#highway=bus_stop [0x2f08 level 3]
+#highway=motorway_junction { name '${ref} ${name}' | '${ref}' | '${name}' }
+#highway=motorway_junction [0x2000 level 4]
+highway=services { name '${ref} ${name}' | '${ref}' | '${name}' }
+highway=services [0x210f level 4]
+
+#historic=museum [0x2c02 level 4]
+#historic=archaeological_site [0x2c02 level 3]
+#historic=memorial [0x2c02 resolution 3]
+
+leisure=golf_course [0x2d05 level 3]
+leisure=marina [0x4300 level 3]
+leisure=park [0x2c06 level 3]
+leisure=pitch [0x2c08 level 3]
+leisure=sports_centre [0x2d0a level 3]
+leisure=stadium [0x2c08 level 3]
+leisure=track [0x2c08 level 3]
+
+man_made=tower [0x6411 level 3]
+
+#natural=beach [0x6604 level 3]
+#natural=cliff [0x6607 level 3]
+#natural=peak [0x6616 level 3]
+natural=tree [0x1150b level 3]
+natural=beach [0x6604 resolution 24]
+natural=cave_entrance [0x6601 resolution 21]
+natural=cliff [0x6607 resolution 21]
+natural=glacier [0x650a resolution 21]
+#natural=peak {name '${name|def:}${ele|height:ft=>m|def:}' } [0x6616 resolution 21]
+natural=peak {name '${name|def:}${ele|def:}${height|def:}' } [0x6616 resolution 21]
+natural=rock [0x6614 resolution 21]
+natural=spring [0x6511 resolution 21]
+natural=stream [0x6512 resolution 21]
+natural=volcano [0x2c0c resolution 21]
+natural=water & name=* [0x6603 resolution 21]
+natural=waterfall | waterway=waterfall [0x6508 resolution 21]
+natural=wetland & name=* [0x6513 resolution 21]
+natural=wood & name=* [0x6618 resolution 21]
+
+#place=hamlet [0x1100 level 4]
+#place=suburb [0x0a00 level 4]
+#place=town [0x0800 level 4]
+#place=village [0x0b00 level 4]
+place=city & population>500000 [0x0200 level 4]
+place=city & population>200000 [0x0300 level 4]
+place=city [0x0400 level 4]
+place=town [0x0800 resolution 18]
+place=village [0x0800 resolution 22]
+place=suburb [0x0a00 resolution 22]
+place=hamlet | place=locality | boundary=estate |  place=isolated_dwelling [0x0b00 resolution 24]
+place=island [0x650c resolution 20]
+
+power=generator & power_source=wind [0x6411 level 3] # Tower
+
+#railway=station [0x2f08 level 4]
+#railway=tram_stop [0x2f08 level 3]
+railway=halt [0x2f08 level 3]
+
+#shop=doityourself [0x2e09 level 3]
+#shop=general [0x2e03 level 3]
+#shop=* [0x2e0c level 3]
+#shop=hairdresser [0x2f10 level 4]
+#shop=bakers [0x2e02 level 3]
+#shop=bakery [0x2e02 level 3]
+#shop=butchers [0x2e00 level 3]
+#shop=butcher [0x2e00 level 3]
+#shop=car_repair [0x2f03 level 3]
+#shop=chemist [0x2e05 level 3]
+#shop=clothes [0x2e07 level 3]
+#shop=computer [0x2e0b level 3]
+#shop=convenience [0x2e02 level 3]
+#shop=department_store [0x2e01 resolution 19]
+#shop=fashion [0x2e07 level 3]
+#shop=garden_centre [0x2e08 level 3]
+#shop=garden_center [0x2e08 level 3]
+#shop=hardware [0x2e09 level 3]
+#shop=mall [0x2e04 level 3]
+#shop=organic [0x2e0a level 3]
+#shop=supermarket [0x2e02 level 3]
+#sport=swimming [0x2d09 level 4]
+#shop=bicycle [0x2e0a level 3]
+
+#tourism=hostel [0x2b02 level 4]
+#tourism=hotel { name '${name} ${operator}' | '${name}' | '${operator}' } [0x2b01 level 4]
+#tourism=information [0x4c00 level 4]
+#tourism=motel [0x2b01 level 4]
+#tourism=museum [0x2c02 level 4]
+tourism=alpine_hut [0x2b02 level 4]
+tourism=attraction [0x2c04 level 4]
+tourism=camp_site [0x2b03 level 4]
+tourism=caravan_site [0x2b03 level 4]
+tourism=picnic_site [0x4a00 level 4]
+tourism=theme_park [0x2c01 level 4]
+tourism=zoo [0x2c07 level 4]
+
+landuse=forest & name=* [0x6618 resolution 24]
+landuse=basin [0x650f resolution 24]
+landuse=cemetery & name=* [0x6403 resolution 24]
+landuse=military [0x640b resolution 24]
+landuse=reservoir [0x650f resolution 24]
+landuse=village_green & name=* [0x2c06 resolution 24]
+landuse=wood & name=* [0x6618 resolution 24]
+
+leisure=common & name=* [0x2c06 resolution 24]
+leisure=garden & name=* [0x2c06 resolution 24]
+leisure=golf_course [0x2d05 resolution 24]
+leisure=ice_rink [0x2d08 resolution 24]
+leisure=marina [0x4300 resolution 24]
+leisure=nature_reserve & name=* [0x6612 resolution 24]
+leisure=park & name=* [0x2c06 resolution 24]
+leisure=pitch { name '${name} (${sport})' | '${name}' } [0x2c08 resolution 24]
+leisure=playground [0x2c06 resolution 24]
+leisure=recreation_ground & name=* [0x2c08 resolution 24]
+leisure=sports_center | leisure=sports_centre { name '${name} (${sport})' | '${name}' } [0x2d0a resolution 24]
+leisure=stadium { name '${name} (${sport})' | '${name}' } [0x2c08 resolution 24]
+leisure=track { name '${name} (${sport})' | '${name}' } [0x2c08 resolution 24]
+leisure=water_park [0x2d09 resolution 24]
+
+<finalize>
+include 'inc/compat_points';
+
