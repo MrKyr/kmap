@@ -75,7 +75,7 @@ function _split()
 {
 echo "Start splitting......"
 sleep 3 
-java -Xmx1024m -jar "$SPLITTER" --max-nodes=900000 "$OPTARG" 
+java -Xmx4096m -jar "$SPLITTER" --max-nodes=900000 "$OPTARG" 
 echo
 echo "Splitting Done!"
 }
@@ -84,7 +84,7 @@ function _build()
 {
 echo "Start building......"
 sleep 3 
-java -Xmx1024m -jar "$MKGMAP" \
+java -Xmx4096m -jar "$MKGMAP" \
     --ignore-osm-bounds \
     --precomp-sea="$SEA" \
     --bounds="$BOUNDS" \
@@ -102,7 +102,7 @@ function _contours()
 COUNTRY="$COUNTRY"_Contours
 echo "Start contours building......"
 sleep 3 
-java -Xmx1024m -jar "$MKGMAP" \
+java -Xmx4096m -jar "$MKGMAP" \
     --max-jobs=2 --keep-going \
     --reduce-point-density=0 --transparent \
     --description=Contours --area-name="$COUNTRY"__Contours \
@@ -116,7 +116,7 @@ function _map()
 {
 echo "Create & apply .typ map"
 sleep 3
-java -Xmx1024m -jar "$MKGMAP" "$TYPE" --gmapsupp 63240*.img
+java -Xmx4096m -jar "$MKGMAP" "$TYPE" --gmapsupp 63240*.img
 echo
 echo "Ready!"
 }
@@ -125,7 +125,7 @@ function _cmap()
 {
 echo "Create & apply .typ contours map"
 sleep 3
-java -Xmx1024m -jar "$MKGMAP" "$C_TYPE" --gmapsupp 63240*.img
+java -Xmx4096m -jar "$MKGMAP" "$C_TYPE" --gmapsupp 63240*.img
 echo
 echo "Ready!"
 }
