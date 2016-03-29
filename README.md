@@ -116,6 +116,10 @@ Nothing special here
 * `-x` clean directory (delete *.img)
 * `-h` help screen
 
+## Screenshots
+
+![Map Screenshot](screenshots/gpr.png)
+
 ## Bugs
 Please report any bug you found at <kyr@designisdesign.eu>
 
