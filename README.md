@@ -33,7 +33,7 @@ Nothing special here
   <http://download.geofabrik.de/europe.html>
   
   **Place it in:**
-  > gmaps-'version'
+  > gmaps parent folder
   >> data
   >>> maps
   
@@ -41,7 +41,7 @@ Nothing special here
   <http://develop.freizeitkarte-osm.de/boundaries/>
   
   **Place it in:**
-  > gmaps-'version'
+  > gmaps parent folder
   >> data
 
 * **Elevation Data (DEM)**  
