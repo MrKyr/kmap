@@ -118,7 +118,7 @@ Nothing special here
 
 ## Screenshots
 
-![Map Screenshot](screenshots/gpr.png)
+![Map Screenshot](screenshots/ymittos.png)
 
 ## Bugs
 Please report any bug you found at <kyr@designisdesign.eu>
