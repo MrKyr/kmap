@@ -1,1 +1,1 @@
-place here the mkgmap & splitter apps
+place here the mkgmap & splitter java apps
