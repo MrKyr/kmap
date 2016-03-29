@@ -1,4 +1,4 @@
-## kmap.sh 1.0 (28 March 2016)
+## [kmap.sh 1.0](https://github.com/MrKyr/kmap) (28 March 2016)
 (c) Kyriakos Bellios (kyr@designisdesign.eu)
 
 ## Licence
