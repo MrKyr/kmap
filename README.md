@@ -1,4 +1,4 @@
-## gmap.sh 1.0 (28 March 2016)
+## kmap.sh 1.0 (28 March 2016)
 (c) Kyriakos Bellios (kyr@designisdesign.eu)
 
 ## Licence
@@ -31,7 +31,7 @@ Nothing special here
   <http://download.geofabrik.de/europe.html>
   
   **Place it in:**
-  > gmaps parent folder
+  > kmaps parent folder
   >> data
   >>> maps
   
@@ -39,7 +39,7 @@ Nothing special here
   <http://develop.freizeitkarte-osm.de/boundaries/>
   
   **Place it in:**
-  > gmaps parent folder
+  > kmaps parent folder
   >> data
 
 * **Elevation Data (DEM)**  
@@ -62,12 +62,12 @@ Nothing special here
   * Extract from: <http://extract.bbbike.org>
 
   **Place it in:**
-  > gmaps-'version'
+  > kmaps-'version'
   >> data
   >>> contours
   
 ## Usage
-    gmap.sh [COUNTRY NAME] [OPTIONS]
+    kmap.sh [COUNTRY NAME] [OPTIONS]
     
    **Important:** You must specify the Country name first
    
@@ -75,33 +75,33 @@ Nothing special here
      
    * Split big .pbf map
 
-        gmap.sh -s ../data/greece-latest.osm.pbf
+        kmap.sh -s ../data/greece-latest.osm.pbf
 
 * Maps
  * Clean, split, build, create & move the map
    
-              gmap.sh -c Greece -x -s ../data/greece-latest.osm.pbf -bmg   
+              kmap.sh -c Greece -x -s ../data/greece-latest.osm.pbf -bmg   
               
  * Build, create & move the map
  
-              gmap.sh -c Greece -bmg
+              kmap.sh -c Greece -bmg
               
  * Create (apply custom type) & move the map
 
-              gmap.sh -c Greece -mg
+              kmap.sh -c Greece -mg
               
 * Contours
  * Clean, split, build, create & move the contours map
 
-             gmap.sh -c Greece -x -s ../data/Greece-Contours.osm.obf -kng
+             kmap.sh -c Greece -x -s ../data/Greece-Contours.osm.obf -kng
              
  * Build, create & move the map
 
-             gmap.sh -c Greece -kng
+             kmap.sh -c Greece -kng
              
  * Create (apply custom type) & move the map
 
-             gmap.sh -c Greece -ng
+             kmap.sh -c Greece -ng
                 
 ## Options
 **Note:** `-c` & `-s` needs an argument  
@@ -124,7 +124,7 @@ Nothing special here
 Please report any bug you found at <kyr@designisdesign.eu>
 
 ## Changelog
-gmap.sh 1.0 (28 March 2016)
+kmap.sh 1.0 (28 March 2016)
   
 * Initial release
 
